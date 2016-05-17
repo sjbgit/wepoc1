@@ -1,0 +1,27 @@
+<!-- https://www.thepolyglotdeveloper.com/2015/08/using-charts-in-your-ionic-framework-mobile-app/ -->
+<ion-view view-title="Stats">
+  <ion-content>
+    <!-- <button class="button button-block button-royal" ng-click="swapData()">
+   		Update					
+	</button> -->
+    <div class="card">
+        <div class="item item-divider">
+            A line chart
+        </div>
+        <div class="item item-text-wrap">
+            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{showTooltips: false}"></canvas>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item item-divider">
+            A bar chart
+        </div>
+        <div class="item item-text-wrap">
+            <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{showTooltips: false}"></canvas>
+        </div>
+    </div>
+    <ion-toggle ng-model="simulateData" ng-change="toggleChange()" ng-checked="simulateData">
+		<h2>Data - {{simulateData}}</h2>
+	</ion-toggle>
+  </ion-content> 
+</ion-view>

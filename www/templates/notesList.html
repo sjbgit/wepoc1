@@ -1,0 +1,67 @@
+<ion-view view-title="Notes">
+  <ion-content>
+    <h1>Notes</h1>
+    <ion-list ng-repeat="note in notes">
+        <ion-item class="item item-icon-left" href="#/app/note/{{note.id}}">
+        <i class="icon ion-compose"></i>
+        {{note.date}} - {{note.title}} 
+        </ion-item>
+ 	</ion-list>
+  </ion-content>
+</ion-view>
+
+<!--   <ion-view title="Notes">
+
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons> 
+    
+
+    <ion-tabs class="tabs-icon-top tabs-positive">
+
+      <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+        <ion-nav-view name="home-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Settings" icon="ion-gear-a" href="#/tab/settings" >
+        <ion-nav-view name="settings-tab"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="Sign-Out" icon="ion-log-out">
+      </ion-tab>
+
+    </ion-tabs>
+  </ion-view> -->
+
+<!-- <ion-view view-title="Notes">
+  <ion-content>
+    <h1>Notes</h1>
+    this is a some text
+
+
+
+
+
+
+
+    asfasf
+
+    <ion-tabs class="tabs-icon-top tabs-positive">
+
+      <ion-tab title="Home" icon="ion-home" href="#/app/home">
+        home info
+      </ion-tab>
+
+      <ion-tab title="Settings" icon="ion-gear-a">
+        settings info
+      </ion-tab>
+
+      <ion-tab title="Sign-Out" icon="ion-log-out">
+      	sign out info
+      </ion-tab>
+
+    </ion-tabs>
+
+  </ion-content>
+</ion-view>
+ -->

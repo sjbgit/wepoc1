@@ -1,0 +1,13 @@
+<ion-view view-title="Note">
+  <ion-content>
+  
+    <h2>{{note.title}}</h2>
+    <div>
+    	{{note.content}}
+    </div>
+    <div ng-repeat="img in note.images">
+    	<img width="100%" height="100%" ng-src="{{img}}"/>
+    </div>
+    
+  </ion-content>
+</ion-view> 

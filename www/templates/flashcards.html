@@ -1,0 +1,36 @@
+<ion-view view-title="Flashcards">
+  <ion-content>
+    <h2>{{flashCards.title}}</h2>
+    	<ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)" >
+
+		   <ion-slide ng-repeat="card in flashCards.cards">
+		   		<div class="flashCardBox">
+		   			<div class="row">
+					  	<!-- <div class="col-60">
+					    	<h2>{{card.title}}</h2>
+					  	</div> -->
+					  	<div>
+					  		<ion-toggle ng-model="card.show" ng-checked="card.show">
+				          		<h2>{{ card.title }}</h2>
+				        	</ion-toggle>
+					  	<!-- <ion-toggle ng-model="card.show" toggle-class="toggle-positive">{{ card.show ? 'Hide' : 'Show'}}</ion-toggle> -->
+					  		<!-- <ion-toggle ng-model="card.show" toggle-class="toggle-positive">{{ card.show ? 'Hide' : 'Show'}}</ion-toggle> -->
+					    	<!-- <button class="button button-block button-positive" ng-click="toggleShow(card)">Toggle Button</button> -->
+					  	</div>
+					</div>
+					<div class="row">
+						<div class="col-100">
+							<ul ng-show="card.show" ng-repeat="info in card.content">
+			        			<li><h5>{{info}}</h5></li>
+			         		</ul>
+						</div>
+					  	
+					</div>
+		   		</div>
+		      	
+
+		   </ion-slide>
+
+		</ion-slide-box>
+  </ion-content>
+</ion-view>

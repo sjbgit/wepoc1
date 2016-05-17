@@ -1,0 +1,88 @@
+/* Empty. Add your own CSS if you like */
+/*
+.box1, .box2, .box3 {
+   height: 300px;
+   border: 2px solid gray;
+   border-radius: 5px;
+   margin: 5px;
+   padding: 10px;
+
+}
+*/
+.flashCardBox, .box1, .box2, .box3 {
+   min-height: 300px;
+   border: 2px solid white;
+   border-radius: 5px;
+   margin: 5px;
+   padding: 10px;
+
+}
+
+/*.item-toggle .toggle
+{
+   left: 16px !important;
+}
+.item-toggle .ng-binding
+{
+   margin-left: 98%  !important;
+}*/
+/*
+.one-line {
+	display:inline;     
+	white-space: nowrap;
+}
+*/
+/* CARD FLIP
+* ========================================================================== */
+
+.flipcardContainer {
+  margin-left: 0;
+  margin-right: 0;
+  height: 375px;
+  position: relative;
+  perspective: 800px;
+}
+
+.statrow {
+  -webkit-box-shadow: 0 -5px 16px -7px #888;
+     -moz-box-shadow: 0 -5px 16px -7px #888;
+          box-shadow: 0 -5px 16px -7px #888;
+}
+
+.col {
+  color: #FFF;
+  padding: 0;
+}
+
+.card {
+  height: 339px;
+}
+
+.card .item-body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.card-bar-container {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  width:100%;
+}
+
+.card-bar {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 15px;
+  margin: 1px 0 1px 0;
+}
+
+.your-bar {
+  background-color: #E64B5D;
+}
+
+.their-bar {
+  background-color: rgba(236, 240, 241,1.0);
+}

@@ -1,0 +1,83 @@
+<ion-view view-title="Quizzes">
+  <ion-content>
+    <h2>{{quiz.title}}</h2>
+
+    <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)" >
+
+	   <ion-slide ng-repeat="question in quiz.questions">
+	   		
+	   		<div class="flashCardBox">
+	   			<div class="row">
+				  	<div>
+				  		<h4>{{ question.content }}</h4>
+				  	</div>
+				</div>
+				<div class="row">
+					<div class="col-100">
+						<div ng-repeat="answer in question.answers">
+							<div>
+								<input type="checkbox" ng-model="answer.selected">
+								<label >{{answer.content}}</label>
+							</div>
+						</div>
+						<!-- <fieldset ng-repeat="answer in question.answers">
+							<div>
+								<input type="checkbox" id="a">
+								<label for="a">{{answer.content}}</label>
+							</div>
+						</fieldset> -->
+						<!-- <ul ng-repeat="answer in question.answers">
+						 	<div>
+								<li><input type="checkbox"><h5>{{answer.content}}</h5></li>
+							</div> 
+
+							 
+		        			
+		         		</ul> -->
+					</div>
+				</div>
+				<div class="row" ng-if="question.answeredCorrectly">
+					<div ng-if="question.answeredCorrectly.value">
+				  		<h4>Well done!</h4>
+				  	</div>
+				  	<div ng-if="!question.answeredCorrectly.value">
+				  		<h4>Incorrect - correct answers:</h4>
+				  		<div ng-repeat="correctAnswer in question.correctAnswers"> 
+				  			<div>
+				  				{{correctAnswer.explanation}}
+				  			</div>
+				  		</div>
+				  	</div>
+				</div>
+				<div class="row">
+					<button class="button button-block button-royal" ng-click="clearOrGrade(question)">
+   						{{ question.answeredCorrectly ? 'Try Again' : 'Show Answers'}}
+					</button>
+				</div>
+	   		</div>
+
+	   </ion-slide>
+
+	</ion-slide-box>
+
+  </ion-content>
+</ion-view>
+
+
+
+
+
+							<!-- <fieldset>
+								<div class="item">
+								    <input type="checkbox" id="a">
+								    <label for="a">a</label>
+								</div>
+								<div class="item">
+								   <input type="checkbox" id="b">
+								    <label for="b">b</label>
+								</div>
+								<div class="item">
+								    <input type="checkbox" id="c">
+								    <label for="c">c</label>
+								</div>
+							</fieldset> -->
