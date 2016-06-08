@@ -18,6 +18,14 @@
 
 }
 
+.box {
+  width:400px;
+  height:500px;
+  margin:auto;
+  display:block;
+  background-color:white;
+}
+
 /*.item-toggle .toggle
 {
    left: 16px !important;

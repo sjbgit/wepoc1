@@ -1,0 +1,11 @@
+<ion-view view-title="Flash Card Decks">
+  <ion-content>
+    <h1>Decks</h1>
+    <ion-list ng-repeat="deck in decks">
+        <ion-item class="item item-icon-left" href="#/app/deck/{{deck._id}}">
+        <i class="icon ion-ios-photos"></i>
+        {{deck.title}}
+        </ion-item>
+ 	</ion-list>
+  </ion-content>
+</ion-view>

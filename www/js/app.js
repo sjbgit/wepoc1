@@ -52,6 +52,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'chart.js'])
     }
   })
 
+  .state('app.decklist', {
+    url: '/decklist',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/flashCardList.html',
+        controller: 'FlashCardListCtrl'
+      }
+    }
+  })
+
+  .state('app.deck', {
+    url: '/deck/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/deck.html',
+        controller: 'DeckCtrl'
+      }
+    }
+  })
+
   .state('app.noteslist', {
     url: '/noteslist',
     views: {

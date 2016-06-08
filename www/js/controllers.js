@@ -249,6 +249,183 @@ angular.module('starter.controllers', ['starter.services'])
      
 })
 
+.controller('FlashCardListCtrl', function($scope, flashCardFactory) {
+
+var query = flashCardFactory.query();
+query.$promise.then(function(data) {
+     $scope.testDecks = data;
+     console.log($scope.testDecks);
+     
+     $scope.decks = data; 
+     //$scope.setSelectedDeck(data[0]);
+     //$scope.bigTotalItems = data.cards.length;
+     //$scope.bigCurrentPage = 1;
+     //$scope.totalItems = 64;
+     
+     //$scope.decks.unshift(data);
+     // Do whatever when the request is finished
+});
+
+})
+
+.controller('DeckCtrl', function($scope, flashCardFactory, $stateParams, $ionicSlideBoxDelegate, $timeout) {
+
+$scope.deck = [];
+
+$scope.hasUpdated = false;
+
+$scope.flashCards = { title: '', cards: [] };
+
+var query = flashCardFactory.get({deckId: $stateParams.id});
+     query.$promise.then(function(data) {
+     console.log(data);
+
+     $scope.flashCards = data;
+
+     for (var i = 0; i < $scope.flashCards.cards; i++) {
+      $scope.flashCards.cards[i].show = false;
+     }
+
+
+     var items = data.cards[0].contents[0].split('\n');
+
+     $timeout(function(){
+      $ionicSlideBoxDelegate.update();
+      $scope.hasUpdated = true;
+    },100);
+
+     // fcs = { title: data.title, cards: [] };
+
+     // // for (var i = 0; i < data.cards.length; i++) {
+     // //  var cd = data.cards[i];
+     // //  var card = { title: cd.title, content: cd.content };
+     // //  fcs.cards.push(card);
+     // // }
+
+     // for (var i = 0; i < data.cards.length; i++) {
+     //  var cd = data.cards[i];
+     //  var card = { title: cd.title, content: cd.content };
+     //  fcs.cards.push(card);
+     // }
+
+     // $scope.flashCards = fcs;
+
+     //$scope.flashCards = data;
+     //$scope.deck = data;
+     // for(var i = 0; i < data.cards.length; i++) {
+     //  $scope.deck.push(data.cards[i]);
+     // }
+     // console.log($scope.deck); 
+      
+     //$scope.decks = data; 
+     //$scope.setSelectedDeck(data[0]);
+     //$scope.bigTotalItems = data.cards.length;
+     //$scope.bigCurrentPage = 1;
+     //$scope.totalItems = 64;
+     
+     //$scope.decks.unshift(data);
+     // Do whatever when the request is finished
+  });
+
+
+
+/////////////////////////////////////////////////
+
+//   $scope.toggleShow = function(card) {
+//      card.show = !card.show;  
+//    };
+
+//   $scope.flashCards = {
+//   title: 'Psychology Exam 2',
+//   cards: [
+
+//     {title: 'Major Depressive Disorder', //content: '1 major depressive episode no mania or hypomania\ndepressed mood\nsad, hopeless\nlasts at least 2 weekd\nrecurrences are common\nlower socio-economic status\nwomen twice as likely as men\nsevere cases may accompany phychotic feature'},
+//         content: [
+//           '1 major depressive episode no mania or hypomania',
+//           'depressed mood',
+//           'sad, hopeless',
+//           'lasts at least 2 weeks',
+//           'recurrences are common',
+//           'lower socio-economic status',
+//           'women twice as likely as men',
+//           'severe cases may accompany phychotic feature',
+//         ], show: false
+//       },
+//     {title: 'test 2', content: ['Flashcard info 2']},
+//     {title: 'test 3', content: ['Flashcard info 3']},
+//     {title: 'test 4', content: ['Flashcard info 4']},
+//     {title: 'test 5', content: ['Flashcard info 5']}
+//   ]
+// };
+////////////////////////////////////////////////
+  
+})
+
+// .controller('DeckCtrl', function($scope, flashCardFactory, $stateParams) {
+  
+
+//   /////////////////////////////////
+
+//   $scope.toggleShow = function(card) {
+//      card.show = !card.show;  
+//    };
+
+//   $scope.flashCards = {
+//   title: 'Psychology Exam 2',
+//   cards: [
+
+//     {title: 'Major Depressive Disorder', //content: '1 major depressive episode no mania or hypomania\ndepressed mood\nsad, hopeless\nlasts at least 2 weekd\nrecurrences are common\nlower socio-economic status\nwomen twice as likely as men\nsevere cases may accompany phychotic feature'},
+//         content: [
+//           '1 major depressive episode no mania or hypomania',
+//           'depressed mood',
+//           'sad, hopeless',
+//           'lasts at least 2 weeks',
+//           'recurrences are common',
+//           'lower socio-economic status',
+//           'women twice as likely as men',
+//           'severe cases may accompany phychotic feature',
+//         ], show: false
+//       },
+//     {title: 'test 2', content: ['Flashcard info 2']},
+//     {title: 'test 3', content: ['Flashcard info 3']},
+//     {title: 'test 4', content: ['Flashcard info 4']},
+//     {title: 'test 5', content: ['Flashcard info 5']}
+//   ]
+// };
+
+
+//   /////////////////////////////////
+
+//   //console.log($stateParams);
+
+//   // console.log('in deck ctrl');
+
+//   // $scope.deck = [];
+
+//   //  $scope.toggleShow = function(card) {
+//   //    card.show = !card.show;  
+//   //  };
+
+//   // var query = flashCardFactory.get({deckId: $stateParams.id});
+//   //    query.$promise.then(function(data) {
+//   //    //$scope.deck = data;
+//   //    for(var i = 0; i < data.cards.length; i++) {
+//   //     $scope.deck.push(data.cards[i]);
+//   //    }
+//   //    console.log($scope.deck); 
+      
+//   //    //$scope.decks = data; 
+//   //    //$scope.setSelectedDeck(data[0]);
+//   //    //$scope.bigTotalItems = data.cards.length;
+//   //    //$scope.bigCurrentPage = 1;
+//   //    //$scope.totalItems = 64;
+     
+//   //    //$scope.decks.unshift(data);
+//   //    // Do whatever when the request is finished
+//   // });
+
+// })
+
 .controller('FlashcardsCtrl', function($scope) {
 
 
