@@ -1,8 +1,8 @@
 angular.module('starter.services', ['ngResource'])
     //https://devdactic.com/improving-rest-with-ngresource/
         .constant("test_baseURL", 'http://jsonplaceholder.typicode.com/users/:user') //"http://localhost:3000/")
-        //.constant("baseURL", 'http://westudypoc01.azurewebsites.net/') //http://localhost:3000/')
-        .constant("baseURL", 'http://localhost:3000/')
+        .constant("baseURL", 'http://westudypoc01.azurewebsites.net/') //http://localhost:3000/')
+        //.constant("baseURL", 'http://localhost:3000/')
         .factory('testFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
           var data = $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'}, {
           update:{
@@ -37,12 +37,3 @@ angular.module('starter.services', ['ngResource'])
       }])
 ;//closing semicolon
 
-
-//EXAMPLE OF USING A SERVICE
-/*
-var query = UserService.query();
-query.$promise.then(function(data) {
-     $scope.users = data;
-     // Do whatever when the request is finished
-});
-*/

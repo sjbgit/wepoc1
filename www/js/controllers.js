@@ -42,7 +42,12 @@ angular.module('starter.controllers', ['starter.services'])
 })
 
 .controller('HomeCtrl', function($scope, testFactory) {  
-  $scope.user = testFactory.get({user: 1});
+  //$scope.user = testFactory.get({user: 1});
+  $scope.user = { name: 'Test User'};
+  $scope.updates = [
+    'Update # 1',
+    'Update # 2'
+  ];
 })
 
 .controller('CollaborateCtrl', function($scope) {
@@ -101,117 +106,6 @@ angular.module('starter.controllers', ['starter.services'])
   }
   
 })
-
-// .controller('StatsCtrl', function($scope) {
-//   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-//   $scope.series = ['Series A', 'Series B'];
-
-//   $scope.swap = true;
-
-//   var data1 = [
-//         [65, 59, 80, 81, 56, 55, 40],
-//         [28, 48, 40, 19, 86, 27, 90]
-//     ];
-// /*
-//   var data2 = [
-//         [25, 19, 10, 21, 76, 25, 70],
-//         [88, 98, 90, 89, 36, 87, 100]
-//     ];
-// */
-
-//   $scope.simulateData = false;
-
-//   var timer = null;
-
-//   $scope.toggleChange = function() {
-//     $scope.simulateData = !$scope.simulateData;
-
-//     if ($scope.simulateData) {
-//       timer = setInterval(function() {
-//         console.log('interval');
-//         //console.log($scope.simulateData);
-//         $scope.swapData();
-//       }, 3000);
-//     }
-//     else {
-//         clearTimeout(timer);
-//     }
-//   }
-
-//   //var a = 100;
-//   //var i = setInterval(timer, 1000);
-
-//   //var y =  $scope.simulateData;
-
-//   /*function getSim() {
-
-//     return $scope.simulateData;
-//   }*/
-
-// // function timer() {
-// //     console.log(a);
-// //     console.log(getSim());
-// //     if (a < 1) {
-// //         console.log('Reaching Stop');
-// //         clearInterval(i);
-// //         return;
-// //     }
-// //     a -= 1;
-// // }
-
-//   // function interval(sim) {
-//   //   if (sim) {
-//   //     $scope.swapData();
-//   //   }
-
-//   //   console.log('interval ' + $scope.simulateData);
-    
-//   // }
-
-//   // setInterval(function() {
-//   //   console.log('interval');
-//   //   //console.log($scope.simulateData);
-//   //   $scope.swapData();
-//   // }, 3000);
-
-//   //setInterval(interval($scope.simulateData), 3000);
-//   /*
-//   setInterval(function() {
-//     console.log('interval');
-//     console.log($scope.simulateData);
-//     $scope.swapData();
-//   }, 3000);
-
-//   */
-
-//   $scope.data = data1
-
-//   function random() {
-//     return Math.random() * (100 - 1) + 1;
-//   }
-
-//   $scope.swapData = function() {
-
-//     if (!$scope.simulateData) return; 
-
-//     var d1 = [];
-//     var d2 = [];
-
-//     for (var i = 0; i < 7; i++) {
-//       d1.push(random());
-//       d2.push(random());
-//     }
-
-//     console.log('change');
-
-//     $scope.data = [d1,d2];
-//     $scope.$apply();
-
-//     //$scope.data = $scope.swap ? data2 : data1;
-//     //$scope.swap = !$scope.swap;
-//   }
-  
-// })
 
 .controller('NotesListCtrl', function($scope) {
   var notes = [
